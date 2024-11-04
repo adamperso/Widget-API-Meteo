@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo App</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Application Météo</h1>
+        
+        <form action="/weather" method="POST">
+            <input type="text" name="city" placeholder="Entrez une ville" required>
+            <button type="submit">Rechercher</button>
+        </form>
+
+        <% if(error) { %>
+            <div class="error"><%= error %></div>
+        <% } %>
+
+        <% if(weather) { %>
+            <div class="weather-card">
+                <h2><%= weather.city %>, <%= weather.country %></h2>
+                <div class="weather-info">
+                    <img src="http://openweathermap.org/img/wn/<%= weather.icon %>@2x.png" alt="Weather icon">
+                    <div class="temperature"><%= weather.temperature %>°C</div>
+                    <div class="description"><%= weather.description %></div>
+                </div>
+                <div class="details">
+                    <div>Ressenti: <%= weather.feelsLike %>°C</div>
+                    <div>Humidité: <%= weather.humidity %>%</div>
+                    <div>Vent: <%= weather.windSpeed %> m/s</div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
