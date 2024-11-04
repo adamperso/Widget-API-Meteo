@@ -69,3 +69,5 @@ async function fetchWeatherData(city) {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+const port = process.env.PORT || 3000;
