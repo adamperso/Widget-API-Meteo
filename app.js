@@ -3,6 +3,8 @@ import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 dotenv.config();
 
 // Reste du code...
@@ -69,5 +71,3 @@ async function fetchWeatherData(city) {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
-
-const port = process.env.PORT || 3000;
