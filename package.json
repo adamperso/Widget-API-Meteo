@@ -1,9 +1,28 @@
 {
   "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node app.js",
+    "electron": "electron .",
+    "build": "electron-builder"
+  },
   "dependencies": {
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.2",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.weather.widget",
+    "mac": {
+      "category": "public.app-category.weather"
+    },
+    "win": {
+      "target": "nsis"
+    }
   }
 }
