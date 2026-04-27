@@ -1,0 +1,45 @@
+# OpenJarvis configuration
+
+# LLM Settings
+llm:
+  provider: ollama  # or "openai"
+  model: deepseek-coder
+  host: http://localhost:11434
+  temperature: 0.7
+  max_tokens: 4096
+
+# Agent Settings
+agent:
+  max_iterations: 10
+  auto_confirm: false  # Require confirmation for dangerous actions
+  verbose: true
+
+# Memory Settings
+memory:
+  enabled: true
+  history_size: 100
+  persist: true
+
+# Security Settings
+security:
+  allowed_commands:
+    - ls
+    - cat
+    - grep
+    - find
+    - python3
+    - npm
+    - git
+    - echo
+  blocked_commands:
+    - rm -rf /
+    - sudo
+    - chmod -R
+  require_confirmation:
+    - delete_file
+    - run_command
+
+# Logging
+logging:
+  level: INFO
+  file: logs/jarvis.log

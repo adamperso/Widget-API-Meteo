@@ -1,25 +1,54 @@
-
+```
 # Dependencies
 node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+venv/
+.venv/
 
-# Environment variables
+# Build artifacts
+dist/
+build/
+target/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Environment files
 .env
 .env.local
-.env.*.local
+*.env.*
 
-# Build files
-/dist
-/build
-
-# IDE files
-.idea/
+# Editors
 .vscode/
-*.sublime-project
-*.sublime-workspace
+.idea/
 
-# OS files
+# OS specific
 .DS_Store
 Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# JavaScript/Node.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Configuration and runtime data
+.memory/
+.history.json
+```
