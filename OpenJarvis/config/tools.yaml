@@ -1,0 +1,31 @@
+# Tool configuration
+
+tools:
+  file_tools:
+    enabled: true
+    max_file_size: 1048576  # 1MB
+    allowed_extensions:
+      - "*"
+    blocked_patterns:
+      - "*.exe"
+      - "*.bin"
+  
+  shell_tools:
+    enabled: true
+    timeout: 30
+    working_directory: "."
+    environment: {}
+  
+  search_tools:
+    enabled: true
+    max_results: 100
+    context_lines: 2
+  
+  code_tools:
+    enabled: true
+    languages:
+      - python
+      - javascript
+      - typescript
+      - java
+      - cpp
